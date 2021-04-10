@@ -29,7 +29,7 @@ echo ^</Configuration^> >> rambo.wsb
 echo @echo off > rambo_launch.bat
 echo start "rambo_launch" /D "%~dp1 " "%~f1" >> rambo_launch.bat
 
-start /w "Rambo" rambo.wsb
+"%windir%\Sysnative\WindowsSandbox.exe" rambo.wsb
 
 del rambo.wsb
 del rambo_launch.bat
