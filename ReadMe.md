@@ -27,3 +27,31 @@ This should:
 Here's a preview of the result!
 
 ![demo.png](demo.png)
+
+## Integration with Visual Studio Code
+
+### One-time setup
+
+1. Do you have a batch file? If so, skip this step, otherwise create `test.bat` as follows (we're assuming that `setup.bat` exists in the current folder and that's what we want to test in the Windows Sandbox):
+
+    ```bat
+    @echo off
+    C:\Users\odagenais\oss\olivierdagenais\rambo\rambo.bat setup.bat
+    ```
+
+1. Do you have a task? If so, skip this step, otherwise create one as follows:
+    1. F1 > Tasks: Run Task > Configure a Task > Create tasks.json file from template > Others
+    1. Set the `label` to `Test with Rambo`
+    1. Set the `type` to `process`
+    1. Set the `command` to `test.bat`
+1. F1 > Tasks: Configure Default Test Task
+    1. Select `Test with Rambo`
+1. File > Preferences > Keyboard Shortcuts
+    1. Bind "Tasks: Run Test Task" to a keyboard shortcut, such as `Ctrl`+`Shift`+`T`
+
+### Launching the "Test with Rambo" task
+
+It's probably one of these:
+
+1. F1 > Tasks: Run Test Task
+1. `Ctrl`+`Shift`+`T`
